@@ -4,22 +4,9 @@ A production-ready Retrieval-Augmented Generation (RAG) chatbot that enables int
 
 ⚠️ Note: This is currently the backend API only. Frontend development is planned for future phases.
 
-📋 Table of Contents
-
-Overview
-Key Features
-Tech Stack
-RAG Architecture
-Project Structure
-Installation
-Usage
-API Endpoints
-How It Works
-Future Enhancements
-
-
 🎯 Overview
 This RAG (Retrieval-Augmented Generation) chatbot allows users to upload PDF documents and ask natural language questions about their content. The system intelligently retrieves relevant information from the documents and generates accurate, context-aware answers using a large language model.
+
 What makes this special:
 
 🔍 Semantic Search: Finds information based on meaning, not just keywords
@@ -112,20 +99,7 @@ High-Level Flow
 │  7. LLM Generation                                               │
 │  8. Return Answer + Sources                                      │
 └─────────────────────────────────────────────────────────────────┘
-Detailed RAG Pipeline
-python# Step-by-step RAG workflow:
 
-1. INDEXING (One-time per document):
-   PDF → Text Extraction → Chunking → Embeddings → Vector DB
-
-2. RETRIEVAL (Per query):
-   Question → Query Embedding → Similarity Search → Top-K Chunks
-
-3. AUGMENTATION:
-   Retrieved Chunks + Question → Structured Prompt
-
-4. GENERATION:
-   Prompt → LLM → Answer + Source Citations
 Why RAG?
 Traditional LLMs have limitations:
 
@@ -198,3 +172,4 @@ bashmkdir -p data/uploads data/chroma_db
 Start the server
 
 bashuvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+
